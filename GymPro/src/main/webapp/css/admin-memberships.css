@@ -1,0 +1,12 @@
+/* Admin Memberships Page Styles */
+.plan-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-bottom:2rem;}
+.plan-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;text-align:center;border-top:4px solid var(--primary);position:relative;}
+.plan-card .plan-price{font-size:2rem;font-weight:900;color:var(--primary);margin:.5rem 0;}
+.plan-card .plan-price sup{font-size:1rem;vertical-align:super;}
+.plan-card .plan-duration{font-size:.85rem;color:var(--gray);margin-bottom:.75rem;}
+.plan-card h3{font-size:1.05rem;font-weight:700;}
+.plan-card .plan-actions{display:flex;gap:.5rem;justify-content:center;margin-top:1rem;}
+.plan-inactive{opacity:.55;}
+.payment-paid{color:var(--success);font-weight:700;}
+.payment-pending{color:var(--warning);font-weight:700;}
+.payment-overdue{color:var(--danger);font-weight:700;}
