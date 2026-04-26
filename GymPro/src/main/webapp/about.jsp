@@ -36,19 +36,19 @@
         <div class="team-grid">
             <div class="trainer-card">
                 <div class="trainer-avatar">R</div>
-                <h3>Raj Sharma</h3>
+                <h3>Nishan Bhusal</h3>
                 <p style="color:var(--primary);font-size:.85rem;font-weight:600;">Strength &amp; Conditioning</p>
                 <p style="font-size:.83rem;color:var(--gray);margin-top:.5rem;">5 years experience. Certified personal trainer.</p>
             </div>
             <div class="trainer-card">
                 <div class="trainer-avatar">S</div>
-                <h3>Sita Thapa</h3>
+                <h3>Ayush Dhimal</h3>
                 <p style="color:var(--primary);font-size:.85rem;font-weight:600;">Yoga &amp; Flexibility</p>
                 <p style="font-size:.83rem;color:var(--gray);margin-top:.5rem;">4 years experience. Mindfulness yoga specialist.</p>
             </div>
             <div class="trainer-card">
                 <div class="trainer-avatar">B</div>
-                <h3>Bikash Rai</h3>
+                <h3> Sachin Bashyal</h3>
                 <p style="color:var(--primary);font-size:.85rem;font-weight:600;">Cardio &amp; HIIT</p>
                 <p style="font-size:.83rem;color:var(--gray);margin-top:.5rem;">6 years experience. High-energy HIIT expert.</p>
             </div>
