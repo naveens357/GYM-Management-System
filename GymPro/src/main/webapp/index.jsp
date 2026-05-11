@@ -50,7 +50,6 @@
         </div>
     </div>
 </section>
-
 <!-- CTA -->
 <section class="section" style="background:var(--dark);text-align:center;padding:4rem 2rem;">
     <h2 style="color:#fff;font-size:2rem;font-weight:800;margin-bottom:1rem;">Ready to Start?</h2>
