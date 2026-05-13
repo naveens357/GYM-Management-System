@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <c:set var="pageTitle"  value="GymPro — Your Fitness Journey"  scope="request"/>
 <c:set var="pageCSS"    value="public"                          scope="request"/>
 <c:set var="activePage" value="home"                            scope="request"/>
@@ -27,26 +28,39 @@
         <h2 class="section-heading">Everything You Need</h2>
         <p class="section-sub">GymPro brings your entire fitness experience into one platform.</p>
         <div class="features-grid">
+
             <div class="feature-card">
-                <div class="feature-icon">&#x1F3CB;</div>
+                <div class="feature-icon" style="width:64px; height:64px; border-radius:50%; background:#fde8e8; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:26px; color:#c0392b;">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
                 <h3>Expert Trainers</h3>
-                <p>Certified professionals specializing in strength, yoga, cardio and more.</p>
+                <p>Our certified trainers aren't just coaches — they're your personal cheerleaders. Whether you're picking up a barbell for the first time or pushing past a plateau, they'll build a plan around your goals, your schedule, and your body. From strength and HIIT to yoga and mobility, there's someone here who gets you.</p>
             </div>
+
             <div class="feature-card">
-                <div class="feature-icon">&#x1F4C5;</div>
+                <div class="feature-icon" style="width:64px; height:64px; border-radius:50%; background:#fde8e8; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:26px; color:#c0392b;">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
                 <h3>Class Scheduling</h3>
-                <p>Browse and enroll in upcoming classes directly from your member portal.</p>
+                <p>No more guessing when your favorite class runs. Browse the full weekly schedule, grab a spot in seconds, and get a reminder before it starts — all from your member portal. Life gets busy, so if plans change, cancelling is just as easy. Your time matters, and we treat it that way.</p>
             </div>
+
             <div class="feature-card">
-                <div class="feature-icon">&#x1F4B3;</div>
+                <div class="feature-icon" style="width:64px; height:64px; border-radius:50%; background:#fde8e8; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:26px; color:#c0392b;">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
                 <h3>Flexible Plans</h3>
-                <p>Monthly, quarterly, and annual membership options to suit your lifestyle.</p>
+                <p>We know one size doesn't fit all — especially when it comes to budgets and lifestyles. Pick from monthly, quarterly, or annual memberships with no hidden fees and no pressure. Need to pause for a holiday or a hectic month at work? We've got options for that too. Your membership, your way.</p>
             </div>
+
             <div class="feature-card">
-                <div class="feature-icon">&#x1F4CA;</div>
+                <div class="feature-icon" style="width:64px; height:64px; border-radius:50%; background:#fde8e8; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:26px; color:#c0392b;">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
                 <h3>Progress Tracking</h3>
-                <p>View your attendance history and class records from your personal dashboard.</p>
+                <p>Seeing your progress laid out in front of you is one of the best motivators out there. Your personal dashboard logs every class attended, every milestone hit, and every streak kept alive. Look back at how far you've come — and use it as fuel to keep going. Growth looks good on you.</p>
             </div>
+
         </div>
     </div>
 </section>
