@@ -5,6 +5,40 @@
 <c:set var="activePage" value="contact"              scope="request"/>
 <%@ include file="/WEB-INF/views/shared/publicHeader.jsp" %>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: stretch; /* makes both columns to the same height */
+    }
+
+    .contact-info-box,
+    .contact-grid .card {
+        height: 100%;          
+        box-sizing: border-box;
+    }
+
+    .ci-item {
+        display: flex;
+        align-items: center;
+        gap: .65rem;
+    }
+
+    .ci-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 1.25rem;
+        font-size: 1rem;
+        line-height: 1;
+    }
+</style>
+
 <div style="background:var(--dark);color:#fff;padding:3rem 2rem;text-align:center;">
     <h1 style="font-size:2.5rem;font-weight:900;">Contact <span style="color:var(--primary);">Us</span></h1>
     <p style="color:#aaa;margin-top:.5rem;">We'd love to hear from you. Send us a message below.</p>
@@ -19,16 +53,16 @@
             <!-- Info Box -->
             <div class="contact-info-box">
                 <h3>Get in Touch</h3>
-                <div class="ci-item"><span class="ci-icon">&#x1F4CD;</span><span>Thamel, Kathmandu, Nepal</span></div>
-                <div class="ci-item"><span class="ci-icon">&#x1F4DE;</span><span>+977-9800000000</span></div>
-                <div class="ci-item"><span class="ci-icon">&#x1F4E7;</span><span>info@gympro.com</span></div>
-                <div class="ci-item"><span class="ci-icon">&#x23F0;</span><span>Mon–Sat: 5:30 AM – 9:00 PM</span></div>
+                <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-location-dot"></i></span><span>Thamel, Kathmandu, Nepal</span></div>
+                <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-phone"></i></span><span>+977-9800000000</span></div>
+                <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-envelope"></i></span><span>info@gympro.com</span></div>
+                <div class="ci-item"><span class="ci-icon"><i class="fa-regular fa-clock"></i></span><span>Mon–Sat: 5:30 AM – 9:00 PM</span></div>
                 <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid #333;">
                     <div style="font-weight:700;color:#fff;margin-bottom:.75rem;">Why Contact Us?</div>
-                    <div class="ci-item"><span class="ci-icon">&#x2139;</span><span>Membership inquiries</span></div>
-                    <div class="ci-item"><span class="ci-icon">&#x2139;</span><span>Class scheduling questions</span></div>
-                    <div class="ci-item"><span class="ci-icon">&#x2139;</span><span>Personal training packages</span></div>
-                    <div class="ci-item"><span class="ci-icon">&#x2139;</span><span>General feedback</span></div>
+                    <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-circle-info"></i></span><span>Membership inquiries</span></div>
+                    <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-circle-info"></i></span><span>Class scheduling questions</span></div>
+                    <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-circle-info"></i></span><span>Personal training packages</span></div>
+                    <div class="ci-item"><span class="ci-icon"><i class="fa-solid fa-circle-info"></i></span><span>General feedback</span></div>
                 </div>
             </div>
 
