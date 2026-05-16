@@ -10,7 +10,11 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css" />
 
 <%-- Hero Section --%>
-<section class="hero">
+<section class="hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('${pageContext.request.contextPath}/images/gym2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;">>
     <h1>Transform Your Body<br>with <span>GymPro</span></h1>
     <p>State-of-the-art facilities, expert trainers, and flexible membership plans designed for your goals.</p>
     <div class="hero-btns">
@@ -18,10 +22,22 @@
         <a href="${pageContext.request.contextPath}/about"    class="btn btn-outline">Learn More</a>
     </div>
     <div class="hero-stats">
-        <div class="hero-stat"><span class="hs-num">500+</span><span class="hs-lbl">Members</span></div>
-        <div class="hero-stat"><span class="hs-num">10+</span><span class="hs-lbl">Expert Trainers</span></div>
-        <div class="hero-stat"><span class="hs-num">30+</span><span class="hs-lbl">Weekly Classes</span></div>
-        <div class="hero-stat"><span class="hs-num">5&#x2605;</span><span class="hs-lbl">Rated</span></div>
+        <div class="hero-stat">
+            <span class="hs-num">${memberCount}+</span>
+            <span class="hs-lbl">Members</span>
+        </div>
+        <div class="hero-stat">
+            <span class="hs-num">${trainerCount}+</span>
+            <span class="hs-lbl">Expert Trainers</span>
+        </div>
+        <div class="hero-stat">
+            <span class="hs-num">${classCount}+</span>
+            <span class="hs-lbl">Weekly Classes</span>
+        </div>
+        <div class="hero-stat">
+            <span class="hs-num">${averageRating}&#x2605;</span>
+            <span class="hs-lbl">Rated</span>
+        </div>
     </div>
 </section>
 
