@@ -104,9 +104,7 @@
         <div class="about-grid">
            
             <div class="about-img-box">
-               <img src="${pageContext.request.contextPath}/Images/gym.png"
-                     alt="GymPro gym interior"/>
-                     
+               <img src="${pageContext.request.contextPath}/images/gym.png" alt="GymPro gym interior"/>             
             </div>
             <div class="about-text">
                 <h2>Our Story</h2>

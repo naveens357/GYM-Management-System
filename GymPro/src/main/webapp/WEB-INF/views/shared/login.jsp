@@ -8,7 +8,16 @@
     <title>Login — GymPro</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/auth.css">
+<style>
+.auth-wrapper{
+    background-image: url('${pageContext.request.contextPath}/images/gym.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+</style>
 </head>
+
 <body>
 <div class="auth-wrapper">
     <div class="auth-box">
