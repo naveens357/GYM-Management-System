@@ -11,7 +11,7 @@ import java.util.List;
  * DAO for contact_inquiries table.
  */
 public class ContactInquiryDAO {
-
+// Save a new contact inquiry into the database
     public boolean insert(ContactInquiry ci) throws SQLException {
         String sql = "INSERT INTO contact_inquiries (name,email,subject,message) VALUES (?,?,?,?)";
         Connection conn = null;
@@ -25,7 +25,7 @@ public class ContactInquiryDAO {
             return ps.executeUpdate() > 0;
         } finally { DBConnection.close(conn); }
     }
-
+// Get all contact inquiries from database (latest first)
     public List<ContactInquiry> findAll() throws SQLException {
         List<ContactInquiry> list = new ArrayList<>();
         String sql = "SELECT * FROM contact_inquiries ORDER BY submitted_at DESC";
@@ -37,7 +37,7 @@ public class ContactInquiryDAO {
         } finally { DBConnection.close(conn); }
         return list;
     }
-
+// To mark a specific inquiry as read
     public boolean markRead(int id) throws SQLException {
         String sql = "UPDATE contact_inquiries SET is_read=1 WHERE inquiry_id=?";
         Connection conn = null;
@@ -48,7 +48,7 @@ public class ContactInquiryDAO {
             return ps.executeUpdate() > 0;
         } finally { DBConnection.close(conn); }
     }
-
+// Convert database row into ContactInquiry object
     private ContactInquiry map(ResultSet rs) throws SQLException {
         ContactInquiry ci = new ContactInquiry();
         ci.setInquiryId(rs.getInt("inquiry_id"));
