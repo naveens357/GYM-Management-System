@@ -5,48 +5,83 @@ import com.gympro.model.User;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.*;
+
 import java.io.IOException;
 
 /**
- * Authentication Filter — redirects unauthenticated users to the login page.
- * Also enforces role-based access: admin paths require admin role.
+ * Authentication Filter
+ * Checks user login and role access.
  */
 @WebFilter(urlPatterns = {"/admin/*", "/member/*"})
 public class AuthFilter implements Filter {
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {}
+    // Role constants
+    private static final String ROLE_ADMIN = "admin";
+    private static final String ROLE_MEMBER = "member";
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
+
+    @Override
+    public void doFilter(ServletRequest request,
+                         ServletResponse response,
+                         FilterChain chain)
             throws IOException, ServletException {
 
-        HttpServletRequest  req  = (HttpServletRequest)  request;
+        // Convert request and response into HTTP objects
+        HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
+        // Get current session
         HttpSession session = req.getSession(false);
-        User loggedUser = (session != null) ? (User) session.getAttribute("loggedUser") : null;
 
+        // Get logged-in user from session
+        User loggedUser = null;
+
+        if (session != null) {
+            loggedUser = (User) session.getAttribute("loggedUser");
+        }
+
+        // Get current request URL
+        String contextPath = req.getContextPath();
         String uri = req.getRequestURI();
 
+        // If user is not logged in
         if (loggedUser == null) {
-            resp.sendRedirect(req.getContextPath() + "/login?error=session");
+
+            if (session != null) {
+                session.setAttribute(
+                        "errorMessage",
+                        "Please login to continue."
+                );
+            }
+
+            resp.sendRedirect(contextPath + "/login");
             return;
         }
 
-        if (uri.contains("/admin/") && !"admin".equals(loggedUser.getRole())) {
-            resp.sendRedirect(req.getContextPath() + "/error403.jsp");
+        // Admin access check
+        if (uri.startsWith(contextPath + "/admin/")
+                && !ROLE_ADMIN.equals(loggedUser.getRole())) {
+
+            resp.sendRedirect(contextPath + "/error403.jsp");
             return;
         }
 
-        if (uri.contains("/member/") && !"member".equals(loggedUser.getRole())) {
-            resp.sendRedirect(req.getContextPath() + "/error403.jsp");
+        // Member access check
+        if (uri.startsWith(contextPath + "/member/")
+                && !ROLE_MEMBER.equals(loggedUser.getRole())) {
+
+            resp.sendRedirect(contextPath + "/error403.jsp");
             return;
         }
 
+        // Continue request
         chain.doFilter(request, response);
     }
 
     @Override
-    public void destroy() {}
+    public void destroy() {
+    }
 }
