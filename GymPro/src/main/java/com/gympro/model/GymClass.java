@@ -3,60 +3,146 @@ package com.gympro.model;
 import java.sql.Timestamp;
 
 /**
- * Model class representing a gym class/session.
+ * Model class for gym classes/sessions.
  */
 public class GymClass {
+
+    // Class details
     private int classId;
     private String className;
     private int trainerId;
+
+    // Schedule details
     private Timestamp scheduleDatetime;
     private int durationMinutes;
+
+    // Capacity details
     private int capacity;
     private int enrolledCount;
+
+    // Additional details
     private String description;
-    private boolean isActive;
+    private boolean active;
     private Timestamp createdAt;
 
-    // Joined field
+    // Joined field from trainer table
     private String trainerName;
 
-    public GymClass() {}
+    /**
+     * Default constructor
+     */
+    public GymClass() {
+    }
 
-    public int getClassId()                  { return classId; }
-    public void setClassId(int classId)      { this.classId = classId; }
+    
+    // Getter and Setter Methods
 
-    public String getClassName()                    { return className; }
-    public void setClassName(String className)      { this.className = className; }
+    public int getClassId() {
+        return classId;
+    }
 
-    public int getTrainerId()                    { return trainerId; }
-    public void setTrainerId(int trainerId)      { this.trainerId = trainerId; }
+    public void setClassId(int classId) {
+        this.classId = classId;
+    }
 
-    public Timestamp getScheduleDatetime()                          { return scheduleDatetime; }
-    public void setScheduleDatetime(Timestamp scheduleDatetime)     { this.scheduleDatetime = scheduleDatetime; }
+    public String getClassName() {
+        return className;
+    }
 
-    public int getDurationMinutes()                        { return durationMinutes; }
-    public void setDurationMinutes(int durationMinutes)    { this.durationMinutes = durationMinutes; }
+    public void setClassName(String className) {
+        this.className = className;
+    }
 
-    public int getCapacity()                  { return capacity; }
-    public void setCapacity(int capacity)     { this.capacity = capacity; }
+    public int getTrainerId() {
+        return trainerId;
+    }
 
-    public int getEnrolledCount()                      { return enrolledCount; }
-    public void setEnrolledCount(int enrolledCount)    { this.enrolledCount = enrolledCount; }
+    public void setTrainerId(int trainerId) {
+        this.trainerId = trainerId;
+    }
 
-    public String getDescription()                      { return description; }
-    public void setDescription(String description)      { this.description = description; }
+    public Timestamp getScheduleDatetime() {
+        return scheduleDatetime;
+    }
 
-    public boolean isActive()                  { return isActive; }
-    public void setActive(boolean isActive)    { this.isActive = isActive; }
+    public void setScheduleDatetime(Timestamp scheduleDatetime) {
+        this.scheduleDatetime = scheduleDatetime;
+    }
 
-    public Timestamp getCreatedAt()                     { return createdAt; }
-    public void setCreatedAt(Timestamp createdAt)       { this.createdAt = createdAt; }
+    public int getDurationMinutes() {
+        return durationMinutes;
+    }
 
-    public String getTrainerName()                    { return trainerName; }
-    public void setTrainerName(String trainerName)    { this.trainerName = trainerName; }
+    public void setDurationMinutes(int durationMinutes) {
+        this.durationMinutes = durationMinutes;
+    }
 
-    /** Returns available spots in the class */
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getEnrolledCount() {
+        return enrolledCount;
+    }
+
+    public void setEnrolledCount(int enrolledCount) {
+        this.enrolledCount = enrolledCount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getTrainerName() {
+        return trainerName;
+    }
+
+    public void setTrainerName(String trainerName) {
+        this.trainerName = trainerName;
+    }
+
+    /**
+     * Returns available seats/spots.
+     */
     public int getAvailableSpots() {
         return capacity - enrolledCount;
+    }
+
+    /**
+     * Checks if class is full.
+     */
+    public boolean isClassFull() {
+        return enrolledCount >= capacity;
+    }
+
+    /**
+     * Checks if class is available for booking.
+     */
+    public boolean isAvailable() {
+        return active && !isClassFull();
     }
 }
