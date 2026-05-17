@@ -5,11 +5,11 @@
 <c:set var="activePage" value="about"              scope="request"/>
 <%@ include file="/WEB-INF/views/shared/publicHeader.jsp" %>
 
-<!-- Font Awesome  -->
+<!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-    /* Our Story image  */
+    /*  image*/
     .about-img-box {
         width: 100%;
         aspect-ratio: 4 / 3;
@@ -25,7 +25,7 @@
         display: block;
     }
 
-    /*  Team grid for 5-card layout  */
+    /* Team grid  5-card layout  */
     .team-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -96,20 +96,22 @@
 
 <div style="background:var(--dark);color:#fff;padding:3rem 2rem;text-align:center;">
     <h1 style="font-size:2.5rem;font-weight:900;">About <span style="color:var(--primary);">GymPro</span></h1>
-    <p style="color:#aaa;margin-top:.5rem;max-width:550px;margin-inline:auto;">We are more than a gym  we are a community built around your goals.</p>
+    <p style="color:#aaa;margin-top:.5rem;max-width:550px;margin-inline:auto;">We are more than a gym we are a community built around your goals.</p>
 </div>
 
 <section class="section">
     <div class="section-inner">
         <div class="about-grid">
-           
+          
             <div class="about-img-box">
-               <img src="${pageContext.request.contextPath}/images/gym.png" alt="GymPro gym interior"/>             
+                <img src="${pageContext.request.contextPath}/images/gym.png"
+                     alt="GymPro gym interior"
+                  />
             </div>
             <div class="about-text">
                 <h2>Our Story</h2>
                 <p>GymPro was founded in 2018 with a simple mission: make professional fitness accessible to everyone in Kathmandu. What started as a small studio has grown into a full-featured fitness management platform.</p>
-                <p>We believe that fitness is not a destination  it's a lifelong journey. Our team of dedicated trainers and state-of-the-art facilities are here to support every step of that journey.</p>
+                <p>We believe that fitness is not a destination — it's a lifelong journey. Our team of dedicated trainers and state-of-the-art facilities are here to support every step of that journey.</p>
                 <div class="about-values">
                     <div class="value-item"><h4><i class="fas fa-bullseye"></i> Focus</h4><p>Goal-oriented training for measurable results.</p></div>
                     <div class="value-item"><h4><i class="fas fa-handshake"></i> Community</h4><p>A welcoming space for all fitness levels.</p></div>
@@ -152,7 +154,7 @@
             </div>
             <div class="trainer-card">
                 <div class="trainer-avatar">A</div>
-                <h3>Naveen Subedi</h3>
+                <h3>Aayush Dhimal </h3>
                 <p class="trainer-role">Boxing &amp; MMA</p>
                 <p class="trainer-exp"><i class="fas fa-clock"></i> 7 years experience. Combat sports specialist.</p>
             </div>
