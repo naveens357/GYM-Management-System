@@ -7,18 +7,12 @@
 <c:set var="activePage" value="home"                            scope="request"/>
 <%@ include file="/WEB-INF/views/shared/publicHeader.jsp" %>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css" />
-
 <%-- Hero Section --%>
-<section class="hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('${pageContext.request.contextPath}/images/gym2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;">>
+<section class="hero">
     <h1>Transform Your Body<br>with <span>GymPro</span></h1>
     <p>State-of-the-art facilities, expert trainers, and flexible membership plans designed for your goals.</p>
     <div class="hero-btns">
-        <a href="${pageContext.request.contextPath}/register" class="btn btn-primary">Join Now — It's Free</a>
+        <a href="${pageContext.request.contextPath}/register" class="btn btn-primary">Join Now  It's Free</a>
         <a href="${pageContext.request.contextPath}/about"    class="btn btn-outline">Learn More</a>
     </div>
     <div class="hero-stats">
@@ -42,7 +36,7 @@
 </section>
 
 <%-- Features Section --%>
-<section class="section features-section">
+<section class="section">
     <div class="section-inner">
         <h2 class="section-heading">Everything You Need</h2>
         <p class="section-sub">GymPro brings your entire fitness experience into one platform.</p>
@@ -51,25 +45,25 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-dumbbell"></i></div>
                 <h3>Expert Trainers</h3>
-                <p>Our certified trainers aren't just coaches — they're your personal cheerleaders. Whether you're picking up a barbell for the first time or pushing past a plateau, they'll build a plan around your goals, your schedule, and your body. From strength and HIIT to yoga and mobility, there's someone here who gets you.</p>
+                <p>Our certified trainers aren't just coaches they're your personal cheerleaders. Whether you're picking up a barbell for the first time or pushing past a plateau, they'll build a plan around your goals, your schedule, and your body. From strength and HIIT to yoga and mobility, there's someone here who gets you.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
                 <h3>Class Scheduling</h3>
-                <p>No more guessing when your favorite class runs. Browse the full weekly schedule, grab a spot in seconds, and get a reminder before it starts — all from your member portal. Life gets busy, so if plans change, cancelling is just as easy. Your time matters, and we treat it that way.</p>
+                <p>No more guessing when your favorite class runs. Browse the full weekly schedule, grab a spot in seconds, and get a reminder before it starts all from your member portal. Life gets busy, so if plans change, cancelling is just as easy. Your time matters, and we treat it that way.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
                 <h3>Flexible Plans</h3>
-                <p>We know one size doesn't fit all — especially when it comes to budgets and lifestyles. Pick from monthly, quarterly, or annual memberships with no hidden fees and no pressure. Need to pause for a holiday or a hectic month at work? We've got options for that too. Your membership, your way.</p>
+                <p>We know one size doesn't fit all  especially when it comes to budgets and lifestyles. Pick from monthly, quarterly, or annual memberships with no hidden fees and no pressure. Need to pause for a holiday or a hectic month at work? We've got options for that too. Your membership, your way.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
                 <h3>Progress Tracking</h3>
-                <p>Seeing your progress laid out in front of you is one of the best motivators out there. Your personal dashboard logs every class attended, every milestone hit, and every streak kept alive. Look back at how far you've come — and use it as fuel to keep going. Growth looks good on you.</p>
+                <p>Seeing your progress laid out in front of you is one of the best motivators out there. Your personal dashboard logs every class attended, every milestone hit, and every streak kept alive. Look back at how far you've come  and use it as fuel to keep going. Growth looks good on you.</p>
             </div>
 
         </div>
@@ -86,3 +80,4 @@
 </section>
 
 <%@ include file="/WEB-INF/views/shared/publicFooter.jsp" %>
+</section>
