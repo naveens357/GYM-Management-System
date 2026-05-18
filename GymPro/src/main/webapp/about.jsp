@@ -154,7 +154,7 @@
             </div>
             <div class="trainer-card">
                 <div class="trainer-avatar">A</div>
-                <h3>Aayush Dhimal </h3>
+                <h3>Naveen Subedi</h3>
                 <p class="trainer-role">Boxing &amp; MMA</p>
                 <p class="trainer-exp"><i class="fas fa-clock"></i> 7 years experience. Combat sports specialist.</p>
             </div>
