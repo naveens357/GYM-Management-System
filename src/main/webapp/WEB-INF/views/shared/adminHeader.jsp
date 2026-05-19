@@ -38,7 +38,7 @@
         <a href="${pageContext.request.contextPath}/admin/attendance"  class="${activePage eq 'attendance'  ? 'active' : ''}"><span class="icon"><i class="fa-solid fa-clipboard-check"></i></span> Verify Attendance</a>
         <div class="sidebar-title" style="margin-top:1rem;">System</div>
         <a href="${pageContext.request.contextPath}/admin/reports"     class="${activePage eq 'reports'     ? 'active' : ''}"><span class="icon"><i class="fa-solid fa-chart-bar"></i></span> Reports</a>
-        <a href="${pageContext.request.contextPath}/contact"           class="${activePage eq 'contact'     ? 'active' : ''}"><span class="icon"><i class="fa-solid fa-envelope"></i></span> Inquiries</a>
+        <a href="${pageContext.request.contextPath}/admin/contact"      class="${activePage eq 'contact'     ? 'active' : ''}"><span class="icon"><i class="fa-solid fa-envelope"></i></span> Inquiries</a>
         <a href="${pageContext.request.contextPath}/logout"><span class="icon"><i class="fa-solid fa-key"></i></span> Logout</a>
     </aside>
 
