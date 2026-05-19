@@ -6,6 +6,9 @@
 <c:set var="activePage" value="dashboard"     scope="request"/>
 <%@ include file="/WEB-INF/views/shared/adminHeader.jsp" %>
 
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <!-- Welcome Banner -->
 <div class="welcome-banner">
     <div>
@@ -22,28 +25,28 @@
 <!-- Stat Cards -->
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="stat-icon">&#x1F465;</div>
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
         <div class="stat-info">
             <div class="value">${totalMembers}</div>
             <div class="label">Active Members</div>
         </div>
     </div>
     <div class="stat-card green">
-        <div class="stat-icon">&#x1F3CB;</div>
+        <div class="stat-icon"><i class="fa-solid fa-dumbbell"></i></div>
         <div class="stat-info">
             <div class="value">${totalTrainers}</div>
             <div class="label">Trainers</div>
         </div>
     </div>
     <div class="stat-card blue">
-        <div class="stat-icon">&#x1F4C5;</div>
+        <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
         <div class="stat-info">
             <div class="value">${totalClasses}</div>
             <div class="label">Upcoming Classes</div>
         </div>
     </div>
     <div class="stat-card orange">
-        <div class="stat-icon">&#x1F4B0;</div>
+        <div class="stat-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
         <div class="stat-info">
             <div class="value revenue-highlight">Rs. <fmt:formatNumber value="${totalRevenue}" pattern="#,##0"/></div>
             <div class="label">Total Revenue</div>
@@ -54,30 +57,30 @@
 <!-- Quick Actions -->
 <div class="quick-action-grid">
     <a href="${pageContext.request.contextPath}/admin/users?filter=pending" class="quick-action">
-        <div class="qa-icon">&#x23F3;</div>
+        <div class="qa-icon"><i class="fa-solid fa-hourglass-half"></i></div>
         <div class="qa-label">Pending Approvals (${pendingUsers.size()})</div>
     </a>
     <a href="${pageContext.request.contextPath}/admin/trainers" class="quick-action">
-        <div class="qa-icon">&#x2795;</div><div class="qa-label">Add Trainer</div>
+        <div class="qa-icon"><i class="fa-solid fa-plus"></i></div><div class="qa-label">Add Trainer</div>
     </a>
     <a href="${pageContext.request.contextPath}/admin/classes" class="quick-action">
-        <div class="qa-icon">&#x1F4C5;</div><div class="qa-label">Schedule Class</div>
+        <div class="qa-icon"><i class="fa-solid fa-calendar-plus"></i></div><div class="qa-label">Schedule Class</div>
     </a>
     <a href="${pageContext.request.contextPath}/admin/memberships" class="quick-action">
-        <div class="qa-icon">&#x1F4B3;</div><div class="qa-label">Assign Membership</div>
+        <div class="qa-icon"><i class="fa-solid fa-credit-card"></i></div><div class="qa-label">Assign Membership</div>
     </a>
 </div>
 
 <!-- Pending Registrations -->
 <div class="card">
     <div class="card-header">
-        <h2>&#x23F3; Pending Member Registrations</h2>
+        <h2><i class="fa-solid fa-hourglass-half"></i> Pending Member Registrations</h2>
         <a href="${pageContext.request.contextPath}/admin/users" class="btn btn-secondary btn-sm">View All Members</a>
     </div>
     <div class="card-body">
         <c:choose>
             <c:when test="${empty pendingUsers}">
-                <p class="no-data">&#10003; No pending registrations.</p>
+                <p class="no-data"><i class="fa-solid fa-circle-check"></i> No pending registrations.</p>
             </c:when>
             <c:otherwise>
                 <div class="table-wrap">
@@ -96,12 +99,12 @@
                                     <form action="${pageContext.request.contextPath}/admin/users" method="post" style="display:inline;">
                                         <input type="hidden" name="userId" value="${u.userId}">
                                         <input type="hidden" name="action" value="approve">
-                                        <button type="submit" class="btn btn-success btn-sm">&#10003; Approve</button>
+                                        <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i> Approve</button>
                                     </form>
                                     <form action="${pageContext.request.contextPath}/admin/users" method="post" style="display:inline;">
                                         <input type="hidden" name="userId" value="${u.userId}">
                                         <input type="hidden" name="action" value="reject">
-                                        <button type="submit" class="btn btn-danger btn-sm">&#10007; Reject</button>
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-xmark"></i> Reject</button>
                                     </form>
                                 </td>
                             </tr>
@@ -117,7 +120,7 @@
 <!-- Upcoming Classes -->
 <div class="card">
     <div class="card-header">
-        <h2>&#x1F4C5; Upcoming Classes</h2>
+        <h2><i class="fa-solid fa-calendar-days"></i> Upcoming Classes</h2>
         <a href="${pageContext.request.contextPath}/admin/classes" class="btn btn-secondary btn-sm">Manage Classes</a>
     </div>
     <div class="card-body">
