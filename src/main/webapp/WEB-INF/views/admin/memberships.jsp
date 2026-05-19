@@ -90,7 +90,7 @@
     </div>
 </div>
 
-<!-- Add Plan Modal -->
+<!-- Adding Plan Modal -->
 <div class="modal-overlay" id="addPlanModal">
     <div class="modal-box">
         <div class="modal-header">
@@ -125,7 +125,7 @@
     </div>
 </div>
 
-<!-- Assign Membership Modal -->
+<!-- Assigning Membership Modal -->
 <div class="modal-overlay" id="assignModal">
     <div class="modal-box">
         <div class="modal-header">

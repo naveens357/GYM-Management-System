@@ -121,6 +121,19 @@ public class UserDAO {
         } finally { DBConnection.close(conn); }
     }
 
+    /** Update only the profile photo filename. */
+    public boolean updateProfilePhoto(int userId, String fileName) throws SQLException {
+        String sql = "UPDATE users SET profile_photo = ? WHERE user_id = ?";
+        Connection conn = null;
+        try {
+            conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, fileName);
+            ps.setInt(2, userId);
+            return ps.executeUpdate() > 0;
+        } finally { DBConnection.close(conn); }
+    }
+
     /** Update only the status field. */
     public boolean updateStatus(int userId, String status) throws SQLException {
         String sql = "UPDATE users SET status = ? WHERE user_id = ?";
@@ -194,6 +207,7 @@ public class UserDAO {
         u.setAddress(rs.getString("address"));
         u.setRole(rs.getString("role"));
         u.setStatus(rs.getString("status"));
+        u.setProfilePhoto(rs.getString("profile_photo"));
         u.setCreatedAt(rs.getTimestamp("created_at"));
         return u;
     }

@@ -9,11 +9,22 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.Part;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 /**
  * Controller for member profile viewing and editing.
  */
 @WebServlet("/member/profile")
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024,        // 1 MB
+    maxFileSize       = 5 * 1024 * 1024,    // 5 MB
+    maxRequestSize    = 10 * 1024 * 1024    // 10 MB
+)
 public class MemberProfileController extends HttpServlet {
 
     private final UserService userService = new UserService();
@@ -83,6 +94,44 @@ public class MemberProfileController extends HttpServlet {
                     req.setAttribute("success", "Password changed successfully.");
                 } else {
                     req.setAttribute("error", "Password change failed.");
+                }
+
+            } else if ("updatePhoto".equals(action)) {
+                Part filePart = req.getPart("profilePhoto");
+                if (filePart == null || filePart.getSize() == 0) {
+                    req.setAttribute("error", "Please choose an image to upload.");
+                    doGet(req, resp); return;
+                }
+
+                String contentType = filePart.getContentType();
+                if (contentType == null || !contentType.startsWith("image/")) {
+                    req.setAttribute("error", "Only image files are allowed (JPG, PNG, GIF).");
+                    doGet(req, resp); return;
+                }
+
+                String original = filePart.getSubmittedFileName();
+                String ext = "";
+                if (original != null) {
+                    int dot = original.lastIndexOf('.');
+                    if (dot >= 0) ext = original.substring(dot).toLowerCase();
+                }
+
+                String fileName = "user_" + sessionUser.getUserId() + "_" + System.currentTimeMillis() + ext;
+
+                String uploadDir = getServletContext().getRealPath("/uploads/profile");
+                Path uploadPath = Paths.get(uploadDir);
+                if (!Files.exists(uploadPath)) Files.createDirectories(uploadPath);
+
+                Path target = uploadPath.resolve(fileName);
+                try (var in = filePart.getInputStream()) {
+                    Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
+                }
+
+                if (userService.updateProfilePhoto(sessionUser.getUserId(), fileName)) {
+                    session.setAttribute("loggedUser", userService.getUserById(sessionUser.getUserId()));
+                    req.setAttribute("success", "Profile photo updated successfully.");
+                } else {
+                    req.setAttribute("error", "Failed to update profile photo.");
                 }
             }
         } catch (Exception e) {

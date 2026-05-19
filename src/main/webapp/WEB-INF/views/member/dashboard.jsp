@@ -32,7 +32,7 @@
     </c:when>
     <c:otherwise>
         <div class="no-membership">
-            <div style="font-size:2.5rem;margin-bottom:.75rem;">&#x1F3CB;</div>
+            <div style="font-size:2.5rem;margin-bottom:.75rem;"><i class="fa-solid fa-dumbbell"></i></div>
             <strong>No active membership</strong>
             <p style="margin-top:.4rem;font-size:.88rem;">Contact the admin to get a membership plan assigned.</p>
         </div>
@@ -42,21 +42,21 @@
 <!-- Stats Row -->
 <div class="stats-grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:2rem;">
     <div class="stat-card">
-        <div class="stat-icon">&#x1F4C5;</div>
+        <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
         <div class="stat-info">
             <div class="value">${enrollments.size()}</div>
             <div class="label">Enrolled Classes</div>
         </div>
     </div>
     <div class="stat-card green">
-        <div class="stat-icon">&#x2705;</div>
+        <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div class="stat-info">
             <div class="value">${attendance.size()}</div>
             <div class="label">Sessions Attended</div>
         </div>
     </div>
     <div class="stat-card blue">
-        <div class="stat-icon">&#x1F4CB;</div>
+        <div class="stat-icon"><i class="fa-solid fa-clipboard-list"></i></div>
         <div class="stat-info">
             <div class="value">${upcomingClasses.size()}</div>
             <div class="label">Upcoming Classes</div>
@@ -67,7 +67,7 @@
 <!-- My Enrollments -->
 <div class="card">
     <div class="card-header">
-        <h2>&#x1F4C5; My Class Enrollments</h2>
+        <h2><i class="fa-solid fa-calendar-days"></i> My Class Enrollments</h2>
         <a href="${pageContext.request.contextPath}/member/classes" class="btn btn-primary btn-sm">Browse Classes</a>
     </div>
     <div class="card-body">
@@ -81,8 +81,8 @@
                     <div>
                         <div class="ce-name">${e.className}</div>
                         <div class="ce-meta">
-                            &#x1F3CB; ${e.trainerName} &nbsp;|&nbsp;
-                            &#x23F0; <fmt:formatDate value="${e.scheduleDatetime}" pattern="dd MMM yyyy, HH:mm"/> &nbsp;|&nbsp;
+                            <i class="fa-solid fa-dumbbell"></i> ${e.trainerName} &nbsp;|&nbsp;
+                            <i class="fa-solid fa-clock"></i> <fmt:formatDate value="${e.scheduleDatetime}" pattern="dd MMM yyyy, HH:mm"/> &nbsp;|&nbsp;
                             ${e.durationMinutes} min
                         </div>
                     </div>
@@ -98,7 +98,7 @@
 
 <!-- Recent Attendance -->
 <div class="card">
-    <div class="card-header"><h2>&#x2705; Recent Attendance</h2></div>
+    <div class="card-header"><h2><i class="fa-solid fa-circle-check"></i> Recent Attendance</h2></div>
     <div class="card-body">
         <c:choose>
             <c:when test="${empty attendance}">

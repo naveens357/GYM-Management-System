@@ -9,7 +9,14 @@
 <c:set var="user" value="${sessionScope.loggedUser}"/>
 
 <div class="profile-header">
-    <div class="profile-avatar-lg">${user.fullName.charAt(0)}</div>
+    <c:choose>
+        <c:when test="${not empty user.profilePhoto}">
+            <img src="${pageContext.request.contextPath}/uploads/profile/${user.profilePhoto}" alt="Profile" style="width:80px;height:80px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+        </c:when>
+        <c:otherwise>
+            <div class="profile-avatar-lg">${user.fullName.charAt(0)}</div>
+        </c:otherwise>
+    </c:choose>
     <div>
         <div class="ph-name">${user.fullName}</div>
         <div class="ph-email">${user.email}</div>
@@ -28,6 +35,36 @@
 
 <!-- Edit Profile Tab -->
 <div id="editTab" class="profile-section active">
+
+    <!-- Profile Photo Upload Card -->
+    <div class="card" style="margin-bottom:1.5rem;">
+        <div class="card-header"><h2>Profile Photo</h2></div>
+        <div class="card-body">
+            <form action="${pageContext.request.contextPath}/member/profile" method="post" enctype="multipart/form-data" style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+                <input type="hidden" name="action" value="updatePhoto">
+
+                <c:choose>
+                    <c:when test="${not empty user.profilePhoto}">
+                        <img src="${pageContext.request.contextPath}/uploads/profile/${user.profilePhoto}"
+                             alt="Profile photo"
+                             style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid var(--primary);">
+                    </c:when>
+                    <c:otherwise>
+                        <div class="profile-avatar-lg" style="width:100px;height:100px;">${user.fullName.charAt(0)}</div>
+                    </c:otherwise>
+                </c:choose>
+
+                <div style="flex:1;min-width:250px;">
+                    <label style="display:block;margin-bottom:.5rem;font-weight:600;">Upload New Photo</label>
+                    <input type="file" name="profilePhoto" accept="image/*" class="form-control" required>
+                    <small style="color:var(--gray);display:block;margin-top:.3rem;">Max 5 MB. JPG, PNG, or GIF only.</small>
+                    <button type="submit" class="btn btn-primary" style="margin-top:.75rem;">Upload Photo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Profile Card -->
     <div class="card">
         <div class="card-header"><h2>Edit Profile</h2></div>
         <div class="card-body">

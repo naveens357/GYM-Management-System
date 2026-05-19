@@ -17,6 +17,7 @@ public class User {
     private String address;
     private String role;
     private String status;
+    private String profilePhoto;
     private Timestamp createdAt;
 
     public User() {}
@@ -67,6 +68,9 @@ public class User {
 
     public String getStatus()                { return status; }
     public void setStatus(String status)     { this.status = status; }
+
+    public String getProfilePhoto()                     { return profilePhoto; }
+    public void setProfilePhoto(String profilePhoto)    { this.profilePhoto = profilePhoto; }
 
     public Timestamp getCreatedAt()                     { return createdAt; }
     public void setCreatedAt(Timestamp createdAt)       { this.createdAt = createdAt; }

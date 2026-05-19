@@ -45,6 +45,10 @@ public class UserService {
         return userDAO.updatePassword(userId, PasswordUtil.hashPassword(newPassword));
     }
 
+    public boolean updateProfilePhoto(int userId, String fileName) throws SQLException {
+        return userDAO.updateProfilePhoto(userId, fileName);
+    }
+
     public boolean emailExists(String email) throws SQLException { return userDAO.emailExists(email); }
     public boolean phoneExists(String phone) throws SQLException { return userDAO.phoneExists(phone); }
     public int     getTotalMembers()         throws SQLException { return userDAO.countApprovedMembers(); }
