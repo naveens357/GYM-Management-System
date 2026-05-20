@@ -1,0 +1,9 @@
+/* Admin Users Page Styles */
+.status-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+.status-tab{padding:.5rem 1.2rem;border-radius:50px;border:2px solid var(--border);background:var(--white);cursor:pointer;font-weight:600;font-size:.85rem;transition:all var(--transition);}
+.status-tab.active,.status-tab:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+.user-avatar{width:36px;height:36px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;}
+.user-info{display:flex;align-items:center;gap:.75rem;}
+.action-btns{display:flex;gap:.35rem;flex-wrap:wrap;}
+.search-bar{display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+.search-bar input{flex:1;min-width:200px;}

@@ -1,0 +1,12 @@
+/* Member Dashboard Page Styles */
+.membership-status-card{background:linear-gradient(135deg,var(--primary),var(--primary-dk));color:#fff;border-radius:var(--radius);padding:1.5rem 2rem;margin-bottom:1.75rem;}
+.membership-status-card h3{font-size:1.1rem;margin-bottom:.25rem;opacity:.85;}
+.membership-status-card .plan-name{font-size:1.6rem;font-weight:800;}
+.membership-status-card .expiry{font-size:.85rem;opacity:.8;margin-top:.4rem;}
+.no-membership{background:var(--white);border-radius:var(--radius);border:2px dashed var(--border);padding:2rem;text-align:center;color:var(--gray);margin-bottom:1.75rem;}
+.class-enrollment-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:.75rem;border-left:4px solid var(--info);}
+.class-enrollment-card .ce-name{font-weight:700;font-size:.95rem;}
+.class-enrollment-card .ce-meta{font-size:.8rem;color:var(--gray);margin-top:.2rem;}
+.attendance-summary{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.75rem;}
+.att-pill{background:var(--white);border-radius:var(--radius);padding:.75rem 1.25rem;box-shadow:var(--shadow);font-size:.85rem;display:flex;align-items:center;gap:.5rem;}
+.att-pill .att-count{font-size:1.4rem;font-weight:800;color:var(--primary);}

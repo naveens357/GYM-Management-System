@@ -1,0 +1,10 @@
+/* Admin Classes Page Styles */
+.class-schedule-table thead th:first-child{width:180px;}
+.schedule-time{font-size:.82rem;color:var(--gray);}
+.schedule-name{font-weight:700;}
+.capacity-bar{height:6px;background:var(--border);border-radius:3px;margin-top:.4rem;overflow:hidden;}
+.capacity-fill{height:100%;background:var(--success);border-radius:3px;transition:width .3s;}
+.capacity-fill.warn{background:var(--warning);}
+.capacity-fill.full{background:var(--danger);}
+.capacity-text{font-size:.78rem;color:var(--gray);margin-top:.2rem;}
+.attendance-section{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;margin-top:1.5rem;}
