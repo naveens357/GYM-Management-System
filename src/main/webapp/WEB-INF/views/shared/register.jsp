@@ -1,5 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.time.LocalDate" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%
+    // Date-of-birth bounds: user must be at least 5 years old.
+    int minAge = 3;
+    int maxAge = 120;
+    String maxDob = LocalDate.now().minusYears(minAge).toString();
+    String minDob = LocalDate.now().minusYears(maxAge).toString();
+    request.setAttribute("maxDob", maxDob);
+    request.setAttribute("minDob", minDob);
+    request.setAttribute("minAge", minAge);
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +35,18 @@
                 <div class="form-group">
                     <label for="fullName">Full Name *</label>
                     <input type="text" id="fullName" name="fullName" class="form-control"
-                           placeholder="John Doe" required
+                           placeholder="Your Full Name" required
                            value="${not empty param.fullName ? param.fullName : ''}">
                 </div>
                 <div class="form-group">
                     <label for="dateOfBirth">Date of Birth *</label>
                     <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control"
-                           required value="${not empty param.dateOfBirth ? param.dateOfBirth : ''}">
+                           required
+                           min="${minDob}"
+                           max="${maxDob}"
+                           data-min-age="${minAge}"
+                           value="${not empty param.dateOfBirth ? param.dateOfBirth : ''}">
+                    <div class="pwd-hint">You must be at least ${minAge} years old.</div>
                 </div>
             </div>
             <div class="form-row">
@@ -84,6 +100,43 @@
         </div>
     </div>
 </div>
+
 <script src="${pageContext.request.contextPath}/js/main.js"></script>
+
+<script>
+(function () {
+    const form = document.querySelector('form[action$="/register"]');
+    const dobInput = document.getElementById('dateOfBirth');
+    if (!form || !dobInput) return;
+
+    const minAge = parseInt(dobInput.getAttribute('data-min-age'), 10) || 5;
+
+    form.addEventListener('submit', function (e) {
+        const val = dobInput.value;
+        if (!val) return; // 'required' handles empty
+
+        const dob = new Date(val);
+        if (isNaN(dob.getTime())) {
+            e.preventDefault();
+            alert('Please enter a valid date of birth.');
+            dobInput.focus();
+            return;
+        }
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (dob > today) {
+            e.preventDefault();
+            alert('Date of birth cannot be in the future.');
+            dobInput.focus();
+            return;
+        }
+
+   
+       
+    });
+})();
+</script>
 </body>
 </html>
