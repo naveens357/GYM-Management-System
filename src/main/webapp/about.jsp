@@ -51,19 +51,17 @@
     }
 
     .trainer-avatar {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: var(--primary, #e63946);
-        color: #fff;
-        font-size: 1.6rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: .25rem;
-        flex-shrink: 0;
-    }
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: .25rem;
+    flex-shrink: 0;
+    border: 3px solid #f3f4f6;
+    background: #fff;
+}
+
 
     .trainer-card h3 {
         font-size: 1rem;
@@ -128,37 +126,43 @@
         <h2 class="section-heading">Our Team</h2>
         <p class="section-sub">Expert trainers committed to your success.</p>
         <div class="team-grid">
-            <div class="trainer-card">
-                <div class="trainer-avatar">N</div>
-                <h3>Nishan Bhusal</h3>
-                <p class="trainer-role">Strength &amp; Conditioning</p>
-                <p class="trainer-exp"><i class="fas fa-clock"></i> 5 years experience. Certified personal trainer.</p>
-            </div>
-            <div class="trainer-card">
-                <div class="trainer-avatar">A</div>
-                <h3>Ayush Dhimal</h3>
-                <p class="trainer-role">Yoga &amp; Flexibility</p>
-                <p class="trainer-exp"><i class="fas fa-clock"></i> 4 years experience. Mindfulness yoga specialist.</p>
-            </div>
-            <div class="trainer-card">
-                <div class="trainer-avatar">S</div>
-                <h3>Sachin Bashyal</h3>
-                <p class="trainer-role">Cardio &amp; HIIT</p>
-                <p class="trainer-exp"><i class="fas fa-clock"></i> 6 years experience. High-energy HIIT expert.</p>
-            </div>
-            <div class="trainer-card">
-                <div class="trainer-avatar">P</div>
-                <h3>Kalsang Sherpa</h3>
-                <p class="trainer-role">Nutrition &amp; Wellness</p>
-                <p class="trainer-exp"><i class="fas fa-clock"></i> 3 years experience. Certified nutrition coach.</p>
-            </div>
-            <div class="trainer-card">
-                <div class="trainer-avatar">A</div>
-                <h3>Naveen Subedi</h3>
-                <p class="trainer-role">Boxing &amp; MMA</p>
-                <p class="trainer-exp"><i class="fas fa-clock"></i> 7 years experience. Combat sports specialist.</p>
-            </div>
-        </div>
+    <div class="trainer-card">
+        <img src="${pageContext.request.contextPath}/images/Nishan.png" alt="Nishan Bhusal" class="trainer-avatar" />
+        <h3>Nishan Bhusal</h3>
+        <p class="trainer-role">Strength &amp; Conditioning</p>
+        <p class="trainer-exp"></i> 5 years experience. Certified personal trainer.</p>
+    </div>
+
+    <div class="trainer-card">
+        <img src="${pageContext.request.contextPath}/images/Aayush.png" alt="Ayush Dhimal" class="trainer-avatar" />
+        <h3>Aayush Dhimal</h3>
+        <p class="trainer-role">Yoga &amp; Flexibility</p>
+        <p class="trainer-exp"></i> 4 years experience. Mindfulness yoga specialist.</p>
+    </div>
+
+    <div class="trainer-card">
+        <img src="${pageContext.request.contextPath}/images/Sachin.png" alt="Sachin Bashyal" class="trainer-avatar" />
+        <h3>Sachin Bashyal</h3>
+        <p class="trainer-role">Cardio &amp; HIIT</p>
+        <p class="trainer-exp"></i> 6 years experience. High-energy HIIT expert.</p>
+    </div>
+
+    <div class="trainer-card">
+        <img src="${pageContext.request.contextPath}/images/Kalsang.png" alt="Kalsang Sherpa" class="trainer-avatar" />
+        <h3>Kalsang Sherpa</h3>
+        <p class="trainer-role">Nutrition &amp; Wellness</p>
+        <p class="trainer-exp"></i> 3 years experience. Certified nutrition coach.</p>
+    </div>
+
+    <div class="trainer-card">
+        <img src="${pageContext.request.contextPath}/images/Naveen.png" alt="Naveen Subedi" class="trainer-avatar" />
+        <h3>Naveen Subedi</h3>
+        <p class="trainer-role">Boxing &amp; MMA</p>
+        <p class="trainer-exp"></i> 7 years experience. Combat sports specialist.</p>
+    </div>
+</div>
+        
+        
     </div>
 </section>
 
