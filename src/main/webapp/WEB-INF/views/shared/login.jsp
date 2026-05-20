@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/auth.css">
 <style>
 .auth-wrapper{
-    background-image: url('${pageContext.request.contextPath}/images/gym.png') !important;
+    background-image: url('${pageContext.request.contextPath}/images/gymhero.png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
